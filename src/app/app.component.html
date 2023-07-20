@@ -1,0 +1,77 @@
+<section class="bg-color">
+    <nav class="toolbar" role="banner">
+        <img src="../assets/logo.jpg" width="50" alt="Angular Logo" />
+        <button class="btn btn-ajouter" (click)="naviguerVersAutre()">Ajouter produit</button>
+        <div class="search">
+            
+          <input class="srch" type="search" name="" [(ngModel)]="termeRecherche" (keyup.enter)="rechercher()" placeholder="Type To text">
+          <div class="btn-group">
+            <button class="btn btn-recherche" (click)="rechercher()">Recherche</button>
+          </div>
+        </div>
+      </nav>
+      
+  
+    <div class="containers">
+        <div class="title">
+            <p>Le Meilleur Vendeur de HiTech</p>
+            <h2><span>Hi</span> Tech</h2>
+        </div>
+      
+
+        <div class="col-md-3 d-flex card-container">
+            <div *ngFor="let produit of produits" class="card mb-4" target="_blank" rel="noopener">
+              
+                <div class="card">
+               
+                  <div class="card-main">
+                      <div class="discount">-9%</div>
+                      <div class="label label-green">Précommande</div>
+                      <div class="product-container">
+                          <div class="p"><img src="../assets/pc.jpg"
+                                  alt="Product"></div>
+                          <div class="p" ><img src="../assets/pc.jpg"
+                                  alt="Product"></div>
+                          <div class="p" ><img src="../assets/pc.jpg"
+                                  alt="Product"></div>
+                      </div>
+                      <div class="image">
+                          <img src="../assets/pc.jpg" alt="Product">
+                      </div>
+                      <div class="cart-line"></div>
+                      <div class="cart-item">
+                          <ul>
+                              <li><a href=""><i class="fa fa-shopping-basket"></i></a></li>
+                              <li><a href=""><i class="fa fa-heart"></i></a></li>
+                              <li><a href="" routerLink="/modifierproduit"><i class="fa fa-edit" ></i></a></li>
+                              <li><a href=""><i class="fa fa-trash" (click)="supprimerProduit(produit.id)"></i></a></li>
+                          </ul>
+                      </div>
+                  </div>
+                  <div class="content">
+                    
+                      <h5> {{ produit.nom }}</h5>
+                      <div class="rating">
+                          <i class="fa fa-star-o"></i>
+                          <i class="fa fa-star-o"></i>
+                          <i class="fa fa-star-o"></i>
+                          <i class="fa fa-star-o"></i>
+                          <i class="fa fa-star-o"></i>
+                      </div>
+                      <p><span class="money">{{ produit.prixUnitaire }}€</span><span class="price-old">$89.00</span></p>
+                      <p><span class="price-old">La quantité restante : {{ produit.quantite }} produits</span></p>
+                  </div>
+              </div>
+          </div>
+
+              
+        
+
+
+
+      </div>
+  </div>
+</section>
+
+  
+  <router-outlet></router-outlet>

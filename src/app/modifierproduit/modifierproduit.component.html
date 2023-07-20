@@ -1,0 +1,26 @@
+<section class="bg-color">
+   
+    <div class="containers">
+      <div class="title">
+        <h4>Modifier un produit</h4>
+      </div>
+  
+      <form (submit)="modifierProduit()">
+        <div>
+          <label>Nom:</label>
+          <input type="text" [(ngModel)]="nouveauNom" name="nom" required>
+        </div>
+        <div>
+          <label>Prix:</label>
+          <input type="number" [(ngModel)]="nouveauPrix" name="prix" required>
+        </div>
+        <div>
+          <label>Quantité:</label>
+          <input type="number" [(ngModel)]="nouvelleQuantite" name="quantite" required>
+        </div>
+        <button type="submit">Modifier</button>
+      </form>
+    </div>
+  </section>
+  
+  
